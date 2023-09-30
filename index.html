@@ -46,13 +46,45 @@
     </div>
     <script>
         let d = new Date();
-    document.getElementsByClassName('left')[0].innerHTML = d.getHours();
-    document.getElementsByClassName('right')[0].innerHTML = d.getMinutes();
+        let h = d.getHours();
+        let m = d.getMinutes();
+
+        if (d.getHours().toString().length == 1) {
+            h = '0' + d.getHours();
+        }
+        else { 
+            h = d.getHours();
+        }
+
+        if (d.getMinutes().toString().length == 1) {
+            m = '0' + d.getMinutes();
+        }
+        else { 
+            m = d.getMinutes();
+        }
+        document.getElementsByClassName('left')[0].innerHTML = h;
+        document.getElementsByClassName('right')[0].innerHTML = m;
 
         function updateClock() {
     let d = new Date();
-    document.getElementsByClassName('left')[0].innerHTML = d.getHours();
-    document.getElementsByClassName('right')[0].innerHTML = d.getMinutes();
+        let h = d.getHours();
+        let m = d.getMinutes();
+
+        if (d.getHours().toString().length == 1) {
+            h = '0' + d.getHours();
+        }
+        else { 
+            h = d.getHours();
+        }
+
+        if (d.getMinutes().toString().length == 1) {
+            m = '0' + d.getMinutes();
+        }
+        else { 
+            m = d.getMinutes();
+        }
+        document.getElementsByClassName('left')[0].innerHTML = h;
+        document.getElementsByClassName('right')[0].innerHTML = m;
 }
         setInterval(updateClock, 1000);
     </script>
